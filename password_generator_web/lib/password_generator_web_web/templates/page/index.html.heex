@@ -3,7 +3,7 @@
     <input type="text" value={@password}>
 
     <!-- Renvoi un Map :password avec toutes ces fonctions :password_lenght, ...--->
-    <.form let={f} for={:password} action={"/"}>
+    <.form let={f} for={:password} action={Routes.page_path(@conn, :generate)}>
       <div class="row">
         <div class="column">
           <%= label f, :password_length, "Taille du mot de passe" %>
@@ -26,7 +26,7 @@
           <%= label f, :numbers, "Chiffres:" %>
         </div>
         <div class="column">
-          <%= checkbox f, :uppercase%>
+          <%= checkbox f, :numbers%>
           (ex : 1234567890)
         </div>
       </div>
@@ -35,7 +35,7 @@
           <%= label f, :symbols, "Symboles:" %>
         </div>
         <div class="column">
-          <%= checkbox f, :uppercase%>
+          <%= checkbox f, :symbols%>
           (ex : &#@)
         </div>
       </div>

@@ -18,6 +18,7 @@ defmodule PasswordGeneratorWebWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    post "/", PageController, :generate
   end
 
   # Other scopes may use custom stacks.
